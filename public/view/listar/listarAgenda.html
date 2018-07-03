@@ -1,0 +1,184 @@
+<div id="agenda" ng-controller="controleCasaCtrl">
+
+    <input class="form-control" type="text" ng-model="busca" placeholder="Pesquiza...">
+
+    <h4> {{app}} </h4>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div id="btnAgendamento">
+
+                <a href="#!/novaAgenda">
+                    <button class="btn btn-primary"> Novo Agendamento</button>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div id="btnListar">
+
+                <a href="#!/listarAgenda">
+                    <button class="btn btn-primary" ng-click="metodo()"> Mostrar Lista</button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <table class="table table-striped">
+        <tr>
+
+            <th>ID</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Ventilador</th>
+            <th>Luz Sala</th>
+            <th>TV</th>
+            <th>Luz Quarto</th>
+            <th>Editar Contato</th>
+            <th>Apagar Contato</th>
+            <!--<th>Data 1</th>-->
+        </tr>
+
+        <tr ng-class="" ng-repeat="dado in dados | filter: {data: busca} | orderBy:'+data' ">
+            <!--<td><input type="checkbox" ng-model="dado.selecionado"></td>-->
+            <td>{{dado.id}}</td>
+            <td>{{dado.data | date:'dd/MM/yyyy'}}</td>
+            <td>{{dado.horario | date:'HH:mm'}}</td>
+            <td>{{dado.ventilador}}</td>
+            <td>{{dado.luzDaSala}}</td>
+            <td>{{dado.tv}}</td>
+            <td>{{dado.luzDoQuarto}}</td>
+            <td>
+                <button class="btn btn-warning" ng-click="editAgenda(dado)">E</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="remover(dado)">X</button>
+            </td>
+
+            <!--<td>{{dado.data1 | date:'dd/MM/yyyy HH:mm'}}</td>-->
+        </tr>
+
+    </table>
+
+    <hr/>
+
+    <!--<div id="novoAgendamento">-->
+    <!--<input class="form-control" type="text" ng-model="dado.id" placeholder="ID"/>-->
+    <!--&lt;!&ndash;<img src=".../img/">&ndash;&gt;-->
+    <!--<br>-->
+    <!--<input class="form-control" type="date" ng-model="dado.data" placeholder="DATA"/>-->
+    <!--<br>-->
+    <!--<input class="form-control" type="text" ng-model="dado.horario" placeholder="HORARIO"/>-->
+
+
+    <!--<div id="radio">-->
+
+    <!--<div class="row">-->
+    <!--<div class="form-check">-->
+    <!--<label >VENTILADOR</label>-->
+    <!--<div class="form-control">-->
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoV"-->
+    <!--ng-model="dado.ventilador"-->
+    <!--value="L" >-->
+    <!--LIGAR-->
+    <!--</label>-->
+
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoV"-->
+    <!--ng-model="dado.ventilado"-->
+    <!--value="D" >-->
+    <!--DESLIGAR-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<br>-->
+    <!--<div class="row" class="radio">-->
+    <!--<div class="form-check">-->
+    <!--<label >Luz Sala</label>-->
+    <!--<div class="form-control">-->
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoLS"-->
+    <!--ng-model="dado.luzDaSala"-->
+    <!--value="L" >-->
+    <!--LIGAR-->
+    <!--</label>-->
+
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoLS"-->
+    <!--ng-model="dado.luzDaSala"-->
+    <!--value="D" >-->
+    <!--DESLIGAR-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+
+    <!--<div class="row">-->
+    <!--<div class="form-check">-->
+    <!--<label >TV</label>-->
+    <!--<div class="form-control">-->
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoTV"-->
+    <!--ng-model="dado.tv"-->
+    <!--value="L" >-->
+    <!--LIGAR-->
+    <!--</label>-->
+
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoTV"-->
+    <!--ng-model="dado.tv"-->
+    <!--value="D" >-->
+    <!--DESLIGAR-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+
+    <!--<div class="row">-->
+    <!--<div class="form-check">-->
+    <!--<label >Luz Quarto</label>-->
+
+    <!--<div class="form-control">-->
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoLQ"-->
+    <!--ng-model="dado.luzDoQuarto"-->
+    <!--value="L" >-->
+    <!--LIGAR-->
+    <!--</label>-->
+
+    <!--<label class="radio-inline">-->
+    <!--<input class="form-check-input"-->
+    <!--type="radio"-->
+    <!--name="estadoLQ"-->
+    <!--ng-model="dado.luzDoQuarto"-->
+    <!--value="D" >-->
+    <!--DESLIGAR-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+
+    <!--<button class="btn btn-primary btn-block" ng-click="adicionarDados(dado)" ng-disabled="!dado.data || !dado.horario"> Adicionar Dados</button>-->
+
+</div>

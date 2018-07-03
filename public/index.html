@@ -1,0 +1,31 @@
+
+<!-- "ws://controlecasaifms.herokuapp.com/teste/websocket" -->
+
+<!DOCTYPE html>
+<html ng-app="controleCasa" >
+<head>
+    <meta charset="UTF-8">
+    <title> Controle CAsa</title>
+
+    <link type="text/css" rel="stylesheet" href="css/app.css">
+
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-websocket/dist/angular-websocket.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller/controleCasaCtrl.js"></script>
+    <script src="js/controller/formDadosController.js"></script>
+    <script src="js/service/agendaAPIService.js"></script>
+    <script src="js/route/route.js"></script>
+
+</head>
+<body >
+
+<div ng-include="'view/home/cabecalho.html'"></div>
+        <div ng-view="view"></div>
+        <!--<div ng-include="'view/home/rodape.html'"></div>-->
+</body>
+</html>
+

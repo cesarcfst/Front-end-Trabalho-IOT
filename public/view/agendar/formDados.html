@@ -1,0 +1,122 @@
+    <div id="novoAgendamento" id="agenda" style="width: 90%" ng-controller="controleCasaCtrl">
+
+        <input class="form-control" type="text" ng-model="dado.id" placeholder="ID"/>
+        <br>
+        <!--<input class="form-control" type="date" ng-model="dado.data | date:'dd/MM/yyyy'" placeholder="DATA" required/>-->
+        <input class="form-control" type="date"  ng-model="dado.data" placeholder="DATA" required/>
+        <br>
+        <!--<input class="form-control" type="time" ng-model="dado.horario | date:'HH:mm'" placeholder="HORARIO" required/>-->
+        <input class="form-control" type="time"  ng-model="dado.horario" placeholder="HORARIO" required/>
+        <br>
+
+        <div id="radio">
+
+            <div class="row">
+                <div class="form-check">
+                    <label >VENTILADOR</label>
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoV"
+                                   ng-model="dado.ventilador"
+                                   value="L" >
+                            LIGAR
+                        </label>
+
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoV"
+                                   ng-model="dado.ventilador"
+                                   value="D" >
+                            DESLIGAR
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row" class="radio">
+                <div class="form-check">
+                    <label >LUZ SALA</label>
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoLS"
+                                   ng-model="dado.luzDaSala"
+                                   value="L" >
+                            LIGAR
+                        </label>
+
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoLS"
+                                   ng-model="dado.luzDaSala"
+                                   value="D" >
+                            DESLIGAR
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="form-check">
+                    <label >TV</label>
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoTV"
+                                   ng-model="dado.tv"
+                                   value="L" >
+                            LIGAR
+                        </label>
+
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoTV"
+                                   ng-model="dado.tv"
+                                   value="D" >
+                            DESLIGAR
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="form-check">
+                    <label >LUZ QUARTO</label>
+
+                    <div class="form-control">
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoLQ"
+                                   ng-model="dado.luzDoQuarto"
+                                   value="L" >
+                            LIGAR
+                        </label>
+
+                        <label class="radio-inline">
+                            <input class="form-check-input"
+                                   type="radio"
+                                   name="estadoLQ"
+                                   ng-model="dado.luzDoQuarto"
+                                   value="D" >
+                            DESLIGAR
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!--<button class="btn btn-primary btn-block" ng-click="adicionarDados(dado)" ng-disabled=" !dado.data || !dado.horario"> Salvar Dados</button>-->
+        <button class="btn btn-primary btn-block" ng-click="adicionarDados(dado)" > Salvar Dados</button>
+    </div>

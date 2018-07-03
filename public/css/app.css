@@ -1,0 +1,55 @@
+#agenda{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.table{
+    margin-top: 20px;
+}
+
+button{
+    text-align:left
+
+}
+#cabecalho{
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnAgendamento{
+    text-align:left;
+}
+#agendamento{
+    text-align:left;
+    margin-top: 5px;
+    margin-top: -20px;
+}
+#alunos{
+
+}
+
+#adicionar{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#novoAgendamento{
+    width: 900px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#radio{
+    margin-top: 50px;
+}
+
+hr{
+    text-decoration: #0b0c0d;
+}
+
+
